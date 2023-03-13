@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let product of productList">
+    <img src="{{product.url}}" alt="{{product.name}}">
+      {{product.name}}
+      {{product.price}}
+      {{product.description}}
+      <button (click)="addToCart(product)">Add to Cart</button>
+  </li>
+</ul>
