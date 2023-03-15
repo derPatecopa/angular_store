@@ -1,4 +1,4 @@
-/* Product list container */
+
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -148,12 +148,12 @@
   outline: none;
   border-color: #007bff;
   }
-  button.disabled {
+  button[disabled] {
     opacity: 0.1;
-    cursor: not-allowed;
+
   }
 
-  button.enabled {
+  button[enabled] {
     opacity: 1;
     cursor: pointer;
   }

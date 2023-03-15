@@ -49,8 +49,10 @@ export class CartComponent {
   onSubmit() {
     this.userService.userName = this.userName;
     this.userService.userAddress = this.userAddress;
-
-    console.log(this.userService.userName, this.userService.userAddress);
+    //console.log(this.userService.userName, this.userService.userAddress);
   }
+
+
+
 
 }
