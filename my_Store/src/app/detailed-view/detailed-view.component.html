@@ -1,21 +1,19 @@
-<div class="product-list">
-  <div class="product" *ngFor="let product of productList">
-    <a routerLink="/detailed-view/{{product.id}}">
-    <img src="{{product.url}}" alt="{{product.name}}">
-  </a>
+<div class="center">
+  <div class="product">
+    <img src="{{product.url}}" alt="{{product.name}}" style="max-width: 50%;">
     <div class="details">
       <h2>{{product.name}}</h2>
-      <p>{{product.price}}</p>
       <p>{{product.description}}</p>
-      <select [(ngModel)]="product.quantity" name="quantity">
+      <p>{{product.price}}</p>
+      <select [(ngModel)]="product.quantity" name="quantity" style="margin-bottom: 10px;">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <p>Quantity {{product.quantity}}</p>
       <button (click)="addToCart(product)">Add to Cart</button>
+      <a routerLink="/">Go back to product list</a>
     </div>
   </div>
 </div>

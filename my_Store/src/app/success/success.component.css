@@ -1,0 +1,43 @@
+.center {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.success {
+  width: 50%;
+  margin-bottom: 30px;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.success h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.success p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.success button {
+  margin-bottom: 20px;
+  background-color: #0066ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.success button:hover {
+
+  background-color: #003399;
+}

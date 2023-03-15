@@ -7,6 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
 import { SuccessComponent } from './success/success.component';
 import { HeaderComponent } from './header/header.component';
+import { DetailedViewComponent } from './detailed-view/detailed-view.component';
+import { FormsModule } from '@angular/forms';
+import { UserService } from './service/user.service';
 
 @NgModule({
   declarations: [
@@ -14,14 +17,16 @@ import { HeaderComponent } from './header/header.component';
     HomeComponent,
     CartComponent,
     SuccessComponent,
-    HeaderComponent
+    HeaderComponent,
+    DetailedViewComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [UserService, CartComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

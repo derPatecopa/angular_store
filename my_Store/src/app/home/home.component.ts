@@ -9,8 +9,10 @@ import { CartService } from '../service/cart.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private productService: ProductService, private cartService: CartService) { }
+  selectedQuantity: number;
+  constructor(private productService: ProductService, private cartService: CartService) {
+    this.selectedQuantity = 0;
+   }
   productList:Product[] = [];
   ngOnInit(): void {
     this.productService
@@ -21,9 +23,8 @@ export class HomeComponent implements OnInit {
   }
   addToCart(product: Product) {
     this.cartService.addToCart(product);
-    if (this.cartService.cartItems.length > 0) {
       window.alert('Product added to cart');
-    }
+
   }
 
 }
