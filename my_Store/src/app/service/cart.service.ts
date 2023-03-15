@@ -31,5 +31,14 @@ export class CartService {
     return this.cartItems;
   }
 
+  removeItem(item: Product) {
+    if (item.quantity === 0) {
+      //searches for the product with 0 quantity
+      const index = this.cartItems.indexOf(item);
+      //replaces the item at the index position
+      this.cartItems.splice(index, 1);
+    }
+  }
+
 }
 

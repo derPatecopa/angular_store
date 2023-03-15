@@ -28,6 +28,12 @@ export class CartComponent {
 
   onQuantityChange() {
     // Recalculate the total price when the quantity changes
+    for (let i = 0; i< this.items.length; i++) {
+      const item = this.items[i];
+      if (item.quantity === 0) {
+        this.cartService.removeItem(item);
+      }
+    }
     this.calcPrice();
   }
 
