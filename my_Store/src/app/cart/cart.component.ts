@@ -14,9 +14,7 @@ export class CartComponent {
   totalPrice: number;
   userName: string;
   userAddress: string;
-
-
-
+  userCreditCard: string;
 
   constructor (private cartService: CartService, private userService : UserService) {
     this.totalPrice = 0;
@@ -24,6 +22,7 @@ export class CartComponent {
     this.calcPrice();
     this.userName = "";
     this.userAddress = "";
+    this.userCreditCard = "";
   }
 
   onQuantityChange() {

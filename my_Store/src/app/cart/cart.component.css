@@ -148,3 +148,12 @@
   outline: none;
   border-color: #007bff;
   }
+  button.disabled {
+    opacity: 0.1;
+    cursor: not-allowed;
+  }
+
+  button.enabled {
+    opacity: 1;
+    cursor: pointer;
+  }
