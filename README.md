@@ -12,3 +12,6 @@ Notes:
 - the total price is calculated based on the cart value
 - Name, adress and total price are being taken to the success page once the submit button is pressed
 - submit button is being enabled when all forms are filled
+
+# changes for second review:
+- added angular FormControl for credit Card

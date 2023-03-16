@@ -54,6 +54,7 @@ export class CartComponent implements OnInit {
       const item = this.items[i];
       if (item.quantity === 0) {
         this.cartService.removeItem(item);
+        window.alert('Item removed from cart');
       }
     }
     this.calcPrice();
