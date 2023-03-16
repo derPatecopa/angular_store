@@ -43,26 +43,31 @@
     />
     <label for="credit-card">Credit Card Number:</label>
     <input
-      type="number"
+      type="text"
       placeholder="Enter your CC details (min. 7 digits)"
       id="credit-card"
       name="credit-card"
-      [(ngModel)]="userCreditCard"
-      pattern="[0-9]+"
-  required
+      class="form-control"
+      [formControl]="userCreditCard"
     />
-    <span class="error-message" *ngIf="!isCreditCardInvalid">
-      Please enter a valid credit card number.
-    </span>
-  </div>
+    <div class="error-Message">
+      <p *ngIf="userCreditCard.errors?.['minlength']">
+        Please provide at least 7 digits
+      </p>
+      <p *ngIf="userCreditCard.errors?.['maxlength']">
+        Please provide at most 9 digits
+      </p>
+    </div>
 
-  <div class="summary">
-    <h2>Total Price: {{ totalPrice }}</h2>
-    <button
-      routerLink="/success"
-      (click)="onSubmit()"
-      [disabled]="isCreditCardInvalid()">
-      Submit
-    </button>
+    <div class="summary">
+      <h2>Total Price: {{ totalPrice }}</h2>
+      <button
+        routerLink="/success"
+        (click)="onSubmit()"
+        [disabled]="isUserInputInvalid()"
+      >
+        Submit
+      </button>
+    </div>
   </div>
 </div>

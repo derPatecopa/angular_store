@@ -8,7 +8,7 @@ import { CartComponent } from './cart/cart.component';
 import { SuccessComponent } from './success/success.component';
 import { HeaderComponent } from './header/header.component';
 import { DetailedViewComponent } from './detailed-view/detailed-view.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './service/user.service';
 
 @NgModule({
@@ -20,7 +20,13 @@ import { UserService } from './service/user.service';
     HeaderComponent,
     DetailedViewComponent,
   ],
-  imports: [FormsModule, BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    FormsModule,
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [UserService, CartComponent],
   bootstrap: [AppComponent],
 })

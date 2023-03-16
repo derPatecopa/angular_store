@@ -153,3 +153,8 @@ button[enabled] {
   opacity: 1;
   cursor: pointer;
 }
+
+.error-Message {
+  color: red;
+  font-size: 22px;
+}

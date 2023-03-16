@@ -1,5 +1,11 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import {
+  FormControl,
+  Validators,
+  AbstractControl,
+  ValidatorFn,
+  FormGroup,
+} from '@angular/forms';
 import { ProductService } from '../service/product.service';
 import { Product } from '../../models/product';
 import { CartService } from '../service/cart.service';
@@ -13,9 +19,9 @@ import { UserService } from '../service/user.service';
 export class CartComponent implements OnInit {
   items = this.cartService.getItems();
   totalPrice: number;
-  userName: string;
+  userName : string;
   userAddress: string;
-  userCreditCard: string;
+  userCreditCard = new FormControl();
 
   constructor(
     private cartService: CartService,
@@ -24,13 +30,22 @@ export class CartComponent implements OnInit {
     this.totalPrice = 0;
     //calculating initial total price
     this.calcPrice();
-    this.userName = '';
     this.userAddress = '';
-    this.userCreditCard = '';
+    this.userName = '';
   }
 
   ngOnInit(): void {
+    this.userCreditCard = new FormControl('', [
+      Validators.required,
+      Validators.minLength(7),
+      Validators.maxLength(9),
+      Validators.pattern('[0-9]*'),
+    ]);
 
+
+    this.userCreditCard.valueChanges.subscribe(()=>{
+      this.checkPatternError();
+    })
   }
 
   onQuantityChange() {
@@ -59,18 +74,18 @@ export class CartComponent implements OnInit {
     this.userService.userAddress = this.userAddress;
     //console.log(this.userService.userName, this.userService.userAddress);
   }
-  isCreditCardInvalid(): boolean {
-    const creditCardNumber = Number(this.userCreditCard);
-    return this.userName.length < 5 ||
-    this.userAddress.length < 5 ||
-    isNaN(Number(creditCardNumber)) ||
-    creditCardNumber < 1000000;
+  isUserInputInvalid(): boolean {
+
+    return (
+      this.userName.length < 5 ||
+      this.userAddress.length < 5 ||
+      this.userCreditCard.invalid
+    );
   }
 
-  creditCardInput = new FormControl('', [
-    Validators.required,
-    Validators.pattern('[0-9]+')
-  ]);
-
-
+  checkPatternError() {
+    if (this.userCreditCard.errors?.['pattern']) {
+      this.userCreditCard.setValue('');
+    }
+  }
 }
