@@ -1,12 +1,11 @@
-
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1rem;
-  }
+}
 
-  /* Product item */
-  .product {
+/* Product item */
+.product {
   background-color: #fff;
   border: 1px solid #eee;
   border-radius: 0.5rem;
@@ -15,37 +14,37 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  }
+}
 
-  /* Product image */
-  .product img {
-    max-width: 100%;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 1rem;
-  }
+/* Product image */
+.product img {
+  max-width: 100%;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
 
-  /* Product details */
-  .details {
+/* Product details */
+.details {
   text-align: center;
-  }
+}
 
-  .details h2 {
+.details h2 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  }
+}
 
-  .details p {
+.details p {
   margin-bottom: 0.5rem;
-  }
+}
 
-  /* Quantity selector */
-  .details select {
+/* Quantity selector */
+.details select {
   margin-bottom: 0.5rem;
-  }
+}
 
-  /* Add to cart button */
-  .details button {
+/* Add to cart button */
+.details button {
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -54,87 +53,85 @@
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
-  }
+}
 
-  .details button:hover {
+.details button:hover {
   background-color: #0069d9;
-  }
+}
 
-  /* Cart view */
-  .checkout-form {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 30px;
-  }
+/* Cart view */
+.checkout-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 30px;
+}
 
-  .userforms {
-    flex: 1;
-    margin-right: 30px;
-  }
+.userforms {
+  flex: 1;
+  margin-right: 30px;
+}
 
-  .userforms h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
+.userforms h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 
-  .userforms label {
-    display: block;
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
+.userforms label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
-  .userforms input[type="text"],
-  .userforms input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 18px;
-    border: none;
-    border-bottom: 2px solid #ccc;
-    margin-bottom: 20px;
-  }
+.userforms input[type="text"],
+.userforms input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 20px;
+}
 
-  .summary {
-    flex: 1;
-    background-color: #f9f9f9;
-    padding: 30px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+.summary {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 30px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-  .summary h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
+.summary h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 
+.summary button {
+  background-color: #0066ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-  .summary button {
-    background-color: #0066ff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+.summary button:hover {
+  background-color: #003399;
+}
 
-
-  .summary button:hover {
-    background-color: #003399;
-  }
-
-  .quantity {
+.quantity {
   margin-top: 0.5rem;
-  }
+}
 
-  .quantity label {
+.quantity label {
   font-size: 1rem;
   margin-right: 0.5rem;
-  }
+}
 
-  .quantity input {
+.quantity input {
   width: 3rem;
   height: 2rem;
   font-size: 1rem;
@@ -142,18 +139,17 @@
   border-radius: 0.25rem;
   text-align: center;
   margin-right: 0.5rem;
-  }
+}
 
-  .quantity input:focus {
+.quantity input:focus {
   outline: none;
   border-color: #007bff;
-  }
-  button[disabled] {
-    opacity: 0.1;
+}
+button[disabled] {
+  opacity: 0.1;
+}
 
-  }
-
-  button[enabled] {
-    opacity: 1;
-    cursor: pointer;
-  }
+button[enabled] {
+  opacity: 1;
+  cursor: pointer;
+}

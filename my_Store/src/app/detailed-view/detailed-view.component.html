@@ -1,11 +1,19 @@
 <div class="center">
   <div class="product">
-    <img src="{{product.url}}" alt="{{product.name}}" style="max-width: 50%;">
+    <img
+      src="{{ product.url }}"
+      alt="{{ product.name }}"
+      style="max-width: 50%"
+    />
     <div class="details">
-      <h2>{{product.name}}</h2>
-      <p>{{product.description}}</p>
-      <p>{{product.price}}</p>
-      <select [(ngModel)]="product.quantity" name="quantity" style="margin-bottom: 10px;">
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+      <p>{{ product.price }}</p>
+      <select
+        [(ngModel)]="product.quantity"
+        name="quantity"
+        style="margin-bottom: 10px"
+      >
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>

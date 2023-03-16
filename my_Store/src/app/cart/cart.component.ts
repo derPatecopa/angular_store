@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { ProductService } from '../service/product.service';
 import { Product } from '../../models/product';
 import { CartService } from '../service/cart.service';
@@ -7,27 +8,34 @@ import { UserService } from '../service/user.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
 })
-export class CartComponent {
+export class CartComponent implements OnInit {
   items = this.cartService.getItems();
   totalPrice: number;
   userName: string;
   userAddress: string;
   userCreditCard: string;
 
-  constructor (private cartService: CartService, private userService : UserService) {
+  constructor(
+    private cartService: CartService,
+    private userService: UserService
+  ) {
     this.totalPrice = 0;
     //calculating initial total price
     this.calcPrice();
-    this.userName = "";
-    this.userAddress = "";
-    this.userCreditCard = "";
+    this.userName = '';
+    this.userAddress = '';
+    this.userCreditCard = '';
+  }
+
+  ngOnInit(): void {
+
   }
 
   onQuantityChange() {
     // Recalculate the total price when the quantity changes
-    for (let i = 0; i< this.items.length; i++) {
+    for (let i = 0; i < this.items.length; i++) {
       const item = this.items[i];
       if (item.quantity === 0) {
         this.cartService.removeItem(item);
@@ -51,8 +59,18 @@ export class CartComponent {
     this.userService.userAddress = this.userAddress;
     //console.log(this.userService.userName, this.userService.userAddress);
   }
+  isCreditCardInvalid(): boolean {
+    const creditCardNumber = Number(this.userCreditCard);
+    return this.userName.length < 5 ||
+    this.userAddress.length < 5 ||
+    isNaN(Number(creditCardNumber)) ||
+    creditCardNumber < 1000000;
+  }
 
-
+  creditCardInput = new FormControl('', [
+    Validators.required,
+    Validators.pattern('[0-9]+')
+  ]);
 
 
 }

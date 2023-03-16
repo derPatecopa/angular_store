@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import { Product } from '../../models/product';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
   cartItems: Product[];
   cartPrice: number;
 
   constructor() {
-    this.cartItems=[];
-    this.cartPrice=0;
-   }
+    this.cartItems = [];
+    this.cartPrice = 0;
+  }
 
   addToCart(product: Product) {
     product.quantity = Number(product.quantity);
@@ -39,6 +39,4 @@ export class CartService {
       this.cartItems.splice(index, 1);
     }
   }
-
 }
-

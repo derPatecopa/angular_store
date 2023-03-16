@@ -4,22 +4,18 @@ import { Product } from '../../models/product';
 import { Observable, map } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) {
+  getAllProducts() {
+    return this.http.get('assets/data.json');
+  }
 
-}
-
-getAllProducts() {
-  return this.http.get('assets/data.json');
-}
-
-getProductById(id: number) {
- return this.http.get<Product[]>('assets/data.json').
- pipe(map(products => products.find(p => p.id === id))
- )
-}
-
+  getProductById(id: number) {
+    return this.http
+      .get<Product[]>('assets/data.json')
+      .pipe(map((products) => products.find((p) => p.id === id)));
+  }
 }
