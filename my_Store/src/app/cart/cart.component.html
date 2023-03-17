@@ -63,7 +63,6 @@
       <h2>Total Price: {{ totalPrice }}</h2>
       <button
         routerLink="/success"
-        (click)="onSubmit()"
         [disabled]="isUserInputInvalid()"
       >
         Submit
@@ -71,5 +70,3 @@
     </div>
   </div>
 </div>
-
-<!-- (input)="onQuantityChange()" -->

@@ -1,6 +1,7 @@
 <div class="header">
   <h1>My Store</h1>
-  <a routerLink="/">Products</a>
+  <a (click)="onProductClick()" routerLink="/">{{ product }}</a>
 
-  <a routerLink="/cart">Cart</a>
+  <a (click)="onCartClick()" routerLink="/cart">{{ cart }}</a>
 </div>
+

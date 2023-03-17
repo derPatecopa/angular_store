@@ -19,7 +19,7 @@ import { UserService } from '../service/user.service';
 export class CartComponent implements OnInit {
   items = this.cartService.getItems();
   totalPrice: number;
-  userName : string;
+  userName: string;
   userAddress: string;
   userCreditCard = new FormControl();
 
@@ -42,10 +42,9 @@ export class CartComponent implements OnInit {
       Validators.pattern('[0-9]*'),
     ]);
 
-
-    this.userCreditCard.valueChanges.subscribe(()=>{
+    this.userCreditCard.valueChanges.subscribe(() => {
       this.checkPatternError();
-    })
+    });
   }
 
   onQuantityChange() {
@@ -76,7 +75,6 @@ export class CartComponent implements OnInit {
     //console.log(this.userService.userName, this.userService.userAddress);
   }
   isUserInputInvalid(): boolean {
-
     return (
       this.userName.length < 5 ||
       this.userAddress.length < 5 ||
@@ -89,4 +87,6 @@ export class CartComponent implements OnInit {
       this.userCreditCard.setValue('');
     }
   }
+
+
 }

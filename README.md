@@ -15,3 +15,4 @@ Notes:
 
 # changes for second review:
 - added angular FormControl for credit Card
+- added ngModelChange to onQuantityChange() Method in cart template (line 16)
