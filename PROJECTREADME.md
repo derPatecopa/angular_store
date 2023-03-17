@@ -16,3 +16,4 @@ Notes:
 # changes for second review:
 - added angular FormControl for credit Card
 - added ngModelChange to onQuantityChange() Method in cart template (line 16)
+- added @Output for header when clicked on cart or product. a window pops up once the cart was clicked. and console.log is provided for both product and cart when clicked. sorry for this implementation but i couldnt think of a better scenario to use @Output in my project. 
