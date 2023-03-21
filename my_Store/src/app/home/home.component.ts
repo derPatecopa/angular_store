@@ -9,14 +9,16 @@ import { CartService } from '../service/cart.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  selectedQuantity: number;
+  //selectedQuantity: number;
+  productList: Product[];
   constructor(
     private productService: ProductService,
     private cartService: CartService
   ) {
-    this.selectedQuantity = 0;
+    //this.selectedQuantity = 0;
+    this.productList = [];
   }
-  productList: Product[] = [];
+
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe((products) => {
       this.productList = products as Product[];

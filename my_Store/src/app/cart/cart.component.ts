@@ -1,13 +1,5 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
-import {
-  FormControl,
-  Validators,
-  AbstractControl,
-  ValidatorFn,
-  FormGroup,
-} from '@angular/forms';
-import { ProductService } from '../service/product.service';
-import { Product } from '../../models/product';
+import { FormControl, Validators } from '@angular/forms';
 import { CartService } from '../service/cart.service';
 import { UserService } from '../service/user.service';
 
@@ -87,6 +79,4 @@ export class CartComponent implements OnInit {
       this.userCreditCard.setValue('');
     }
   }
-
-
 }

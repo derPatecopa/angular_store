@@ -10,7 +10,9 @@ export class AppComponent {
 
   onCartClicked() {
     console.log('Cart clicked');
-    window.alert('Ready for Checkout? Please fill in your credentials and you are good to go!');
+    window.alert(
+      'Ready for Checkout? Please fill in your credentials and you are good to go!'
+    );
   }
   onProductClicked() {
     console.log('Product clicked');
